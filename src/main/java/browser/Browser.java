@@ -33,7 +33,7 @@ public class Browser {
         return propertyValue;
     }
 
-    public static WebDriver getDriver() {
+    public static void setDriver() {
         String driverValue = getProperty("browser");
 
         if(driverValue.equalsIgnoreCase("chrome")) {
@@ -46,7 +46,9 @@ public class Browser {
             WebDriverManager.edgedriver().setup();
             driver = new EdgeDriver();
         }
+    }
 
+    public static WebDriver getDriver(){
         return driver;
     }
 }
